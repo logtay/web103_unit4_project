@@ -36,7 +36,6 @@ const CarDetails = () => {
       <p><strong>Wheels:</strong> {car.wheels}</p>
       <p><strong>Convertible:</strong> {car.convertible ? 'Yes' : 'No'}</p>
 
-      <button onClick={() => navigate(-1)}>Back</button>
     </div>
   );
 };

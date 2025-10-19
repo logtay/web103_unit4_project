@@ -1,4 +1,4 @@
-import { pool } from "../config/database";
+import { pool } from "../config/database.js";
 
 const createItem = async (req, res) => {
   try {

@@ -1,11 +1,12 @@
-import React from 'react'
 import '../App.css'
-import React, { useState } from 'react';
-import { createCar } from '/services/CarsAPI.jsx';
+import { useState } from 'react';
+//import { createCar } from '/services/CarsAPI.jsx';
+import * as data from '../carData.js';
+
 
 
 const CreateCar = () => {
-
+    
     return (
         <div>
 

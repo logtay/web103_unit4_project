@@ -70,19 +70,20 @@ const handleSubmit = async (e) => {
   }
 };
 
-  const handleDelete = async () => {
-    const numericId = Number(id);
-    if (isNaN(numericId)) return;
+const handleDelete = async () => {
+  const numericId = Number(id);
+  if (isNaN(numericId)) return;
 
-    if (window.confirm('Are you sure you want to delete this car?')) {
-      try {
-        await deleteCar(numericId);
-        navigate('/items');
-      } catch (error) {
-        console.error('Error deleting car:', error);
-      }
+  if (window.confirm('Are you sure you want to delete this car?')) {
+    try {
+      await deleteCar(numericId);
+      navigate('/items');          
+    } catch (error) {
+      console.error('Error deleting car:', error);
     }
-  };
+  }
+};
+
 
   return (
     <div className='create-car-container'>

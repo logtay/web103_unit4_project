@@ -32,13 +32,10 @@ const CarDetails = () => {
       <div className="card card-details">
         <h2>{car.name}</h2>
         <p><strong>Price:</strong> ${car.price}</p>
-        <p>
-          <strong>Exterior:</strong> {car.exterior} 
-          <strong> | Interior:</strong> {car.interior} 
-          <strong> | Roof:</strong> {car.roof} 
-          <strong> | Wheels:</strong> {car.wheels} 
-          {car.convertible && ' (Convertible)'}
-        </p>
+      <p>
+        <strong>Exterior:</strong> {car.exterior}<br /> <strong>Interior:</strong> {car.interior}<br /> <strong>Roof:</strong> {car.convertible ? 'N/A' : car.roof}<br /> <strong>Wheels:</strong> {car.wheels}<br />
+        {car.convertible && <strong>Is Convertible</strong>}
+      </p>
         <div className="button-group">
           <button onClick={() => navigate(`/edit/${car.id}`)}>Edit Car</button>
         </div>

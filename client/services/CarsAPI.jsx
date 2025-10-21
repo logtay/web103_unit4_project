@@ -60,11 +60,12 @@ export const deleteCar = async (id) => {
     const response = await fetch(`http://localhost:3000/items/${id}`, {
       method: 'DELETE',
     });
+
     if (!response.ok) {
       throw new Error('Failed to delete car');
     }
-    const data = await response.json();
-    return data;
+
+    return true; 
   } catch (error) {
     console.error(`Error deleting car with ID ${id}:`, error);
     throw error;

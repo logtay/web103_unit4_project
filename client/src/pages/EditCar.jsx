@@ -147,7 +147,6 @@ useEffect(() => {
 
       <button
         onClick={handleDelete}
-        style={{ marginTop: '10px', backgroundColor: 'red', color: 'white' }}
       >
         Delete Car
       </button>

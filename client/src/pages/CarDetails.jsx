@@ -35,6 +35,9 @@ const CarDetails = () => {
       <p><strong>Roof:</strong> {car.roof}</p>
       <p><strong>Wheels:</strong> {car.wheels}</p>
       <p><strong>Convertible:</strong> {car.convertible ? 'Yes' : 'No'}</p>
+      <button onClick={() => navigate(`/edit/${car.id}`)}>
+  Edit Car
+</button>
 
     </div>
   );

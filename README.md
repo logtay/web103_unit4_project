@@ -4,7 +4,7 @@ Submitted by: **Taylor Femat**
 
 About this web app: **This web app allows users to create a custom car of their choosing. They can choose from different features such as interior, exterior, wheels, etc. The user is given a total price for the options they chose. Once a user has created a car it can view that car and all others on the view cars page. From this page, the user can also view individual details about other cars. On each car's detail page, that car's information can be edited or updated. The car can also be deleted.**
 
-Time spent: **14** hours
+Time spent: **15** hours
 
 ## Required Features
 
@@ -21,7 +21,7 @@ The following **required** functionality is completed:
 - [x] **The price of the `CustomItem` (e.g. car) changes dynamically as different options are selected *OR* The app displays the total price of all features.**
 - [x] **The visual interface changes in response to at least one customizable feature.**
 - [x] **The user can submit their choices to save the item to the list of created `CustomItem`s.**
-- [ ] **If a user submits a feature combo that is impossible, they should receive an appropriate error message and the item should not be saved to the database.**
+- [x] **If a user submits a feature combo that is impossible, they should receive an appropriate error message and the item should not be saved to the database.**
 - [x] **Users can view a list of all submitted `CustomItem`s.**
 - [x] **Users can edit a submitted `CustomItem` from the list view of submitted `CustomItem`s.**
 - [x] **Users can delete a submitted `CustomItem` from the list view of submitted `CustomItem`s.**

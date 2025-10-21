@@ -1,0 +1,94 @@
+.create-car-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  background: transparent; 
+  padding: 3rem 1rem;
+  font-family: var(--font-family);
+  color: var(--color);
+}
+
+.create-card {
+  background-color: rgba(0, 0, 0, 0.8); 
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  width: 80%;
+  max-width: 80%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.create-card h2 {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.create-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color);
+}
+
+.create-form span {
+  margin-bottom: 0.3rem;
+  color: var(--color);
+}
+
+.create-form input[type="text"],
+.create-form select {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+
+.create-form input::placeholder {
+  color: var(--form-element-placeholder-color);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--color);
+}
+
+.price-display {
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary);
+  margin-top: 1rem;
+}
+
+.create-form button {
+  align-self: center;
+  background-color: var(--primary);
+  color: var(--color);
+  border-radius: 12px;
+  border: 2px solid transparent;
+  padding: 0.7rem 1.5rem;
+}
+.create-form select:disabled {
+  opacity: 0.5;
+}

@@ -33,7 +33,8 @@ const updateItem = async (req, res) => {
       const id = parseInt(req.params.id)
       const { name, convertible, exterior, interior, roof, wheels, price } = req.body
       const results = await pool.query(`
-          UPDATE CustomItems SET name = $1, convertible = $2, exterior = $3, interior = $4, roof = $5, wheels = $6, price = $7 WHERE id = $8`,
+          UPDATE CustomItems SET name = $1, convertible = $2, exterior = $3, interior = $4, roof = $5, wheels = $6, price = $7 WHERE id = $8
+          RETURNING *`,
           [name, convertible, exterior, interior, roof, wheels, price, id]
       )
       res.status(200).json(results.rows[0])

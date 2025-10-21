@@ -43,24 +43,17 @@ export const createCar = async (carData) => {
 };
 
 export const updateCar = async (id, carData) => {
-  try {
-    const response = await fetch(`http://localhost:3000/items/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(carData),
-    });
-    if (!response.ok) {
-      throw new Error('Failed to update car');
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(`Error updating car with ID ${id}:`, error);
-    throw error;
-  }
+  const numericId = Number(id);
+  const response = await fetch(`http://localhost:3000/items/${numericId}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(carData),
+  });
+  if (!response.ok) throw new Error('Failed to update car');
+  return response.json();
 };
+
+
 
 export const deleteCar = async (id) => {
   try {

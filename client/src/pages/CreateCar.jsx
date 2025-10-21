@@ -4,7 +4,7 @@ import { createCar } from '/services/CarsAPI.jsx';
 import * as data from '../carData.js';
 import { calculatePrice } from '../utilities/calcprice.js';
 import { useNavigate } from 'react-router-dom';
-
+import '../css/Form.css';
 const CreateCar = () => {
   const navigate = useNavigate();
 
@@ -33,42 +33,48 @@ const CreateCar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const carToCreate = {
-      ...formData,
-      price: totalPrice
-    };
+    const userCar = { ...formData, price: totalPrice };
 
     try {
-      await createCar(carToCreate);
-      console.log('Car created successfully:', carToCreate);
-      navigate('/items'); 
+      await createCar(userCar);
+      console.log('Car created successfully:', userCar);
+      navigate('/items');
     } catch (error) {
       console.error('Error creating car:', error);
     }
   };
 
   return (
-    <div>
-      <h2>Create a Car</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Name:
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-          </label>
-        </div>
+    <div className="create-car-container">
+      <div className="create-card">
+        <h2 className="create-title">Create a Car</h2>
+        <form onSubmit={handleSubmit} className="create-form">
+          <div className="form-group">
+            <label>Name</label>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Enter car name"
+              required
+            />
+          </div>
 
-        <div>
-          <label>
-            Convertible:
-            <input type="checkbox" name="convertible" checked={formData.convertible} onChange={handleChange} />
-          </label>
-        </div>
+          <div className="form-group checkbox-group">
+            <label>
+              <input
+                type="checkbox"
+                name="convertible"
+                checked={formData.convertible}
+                onChange={handleChange}
+              />
+              Convertible
+            </label>
+          </div>
 
-        <div>
-          <label>
-            Exterior:
+          <div className="form-group">
+            <label>Exterior</label>
             <select name="exterior" value={formData.exterior} onChange={handleChange} required>
               <option value="">Select Exterior</option>
               {data.exteriorOptions.map((option) => (
@@ -77,12 +83,10 @@ const CreateCar = () => {
                 </option>
               ))}
             </select>
-          </label>
-        </div>
+          </div>
 
-        <div>
-          <label>
-            Interior:
+          <div className="form-group">
+            <label>Interior</label>
             <select name="interior" value={formData.interior} onChange={handleChange} required>
               <option value="">Select Interior</option>
               {data.interiorOptions.map((option) => (
@@ -91,13 +95,11 @@ const CreateCar = () => {
                 </option>
               ))}
             </select>
-          </label>
-        </div>
+          </div>
 
-        <div>
-          <label>
-            Roof:
-            <select name="roof" value={formData.roof} onChange={handleChange} required>
+          <div className="form-group">
+            <label>Roof</label>
+            <select name="roof" value={formData.roof} onChange={handleChange} disabled={formData.convertible} required>
               <option value="">Select Roof</option>
               {data.roofOptions.map((option) => (
                 <option key={option.name} value={option.name}>
@@ -105,12 +107,10 @@ const CreateCar = () => {
                 </option>
               ))}
             </select>
-          </label>
-        </div>
+          </div>
 
-        <div>
-          <label>
-            Wheels:
+          <div className="form-group">
+            <label>Wheels</label>
             <select name="wheels" value={formData.wheels} onChange={handleChange} required>
               <option value="">Select Wheels</option>
               {data.wheelsOptions.map((option) => (
@@ -119,13 +119,15 @@ const CreateCar = () => {
                 </option>
               ))}
             </select>
-          </label>
-        </div>
+          </div>
 
-        <p>Total Price: ${totalPrice}</p>
+          <p className="price-display">Total Price: ${totalPrice}</p>
 
-        <button type="submit">Create Car</button>
-      </form>
+          <button type="submit" className="submit-btn">
+            Create Car
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

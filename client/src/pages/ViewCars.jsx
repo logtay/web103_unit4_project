@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { getAllCars } from '/services/CarsAPI.jsx';
 import { Link } from 'react-router-dom';
 
+
 const ViewCars = () => {
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);

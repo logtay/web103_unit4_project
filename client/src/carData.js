@@ -23,10 +23,10 @@ export const roofOptions = [
 ];
 
 export const wheelsOptions = [
-  { name: '18" Alloy', price: 400 },
-  { name: '19" Sport', price: 600 },
-  { name: '20" Chrome', price: 700 },
-  { name: '22" Performance', price: 1500 }
+  { name: 'Alloy', price: 400 },
+  { name: 'Sport', price: 600 },
+  { name: 'Chrome', price: 700 },
+  { name: 'Performance', price: 1500 }
 ];
 
 export const convertibleOptions = [

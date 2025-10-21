@@ -26,7 +26,6 @@ const CreateCar = () => {
     });
   };
 
-  // Calculate total price of selected options (not dynamic per change, just sum of current selections)
   const totalPrice = calculatePrice({
     ...formData,
     convertible: formData.convertible ? 'Convertible' : 'Non-Convertible'
@@ -43,7 +42,7 @@ const CreateCar = () => {
     try {
       await createCar(carToCreate);
       console.log('Car created successfully:', carToCreate);
-      navigate('/items'); // redirect after creation
+      navigate('/items'); 
     } catch (error) {
       console.error('Error creating car:', error);
     }
@@ -123,7 +122,6 @@ const CreateCar = () => {
           </label>
         </div>
 
-        {/* Display the total price of all selected features */}
         <p>Total Price: ${totalPrice}</p>
 
         <button type="submit">Create Car</button>

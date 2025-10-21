@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAllCars } from '/services/CarsAPI.jsx';
-import { Link } from 'react-router-dom';
-
+import Card from '../components/Card';
 
 const ViewCars = () => {
   const [cars, setCars] = useState([]);
@@ -26,18 +25,14 @@ const ViewCars = () => {
 
   return (
     <div>
+      <div className="cards-container">
       <h2>All Cars</h2>
-      {cars.length === 0 ? (
-        <p>No cars available.</p>
-      ) : (
-        <ul>
-          {cars.map(car => (
-            <li key={car.id}>
-              <Link to={`/items/${car.id}`}><strong>{car.name}</strong></Link> - ${car.price} - {car.exterior}/{car.interior}/{car.roof}/{car.wheels} {car.convertible ? '(Convertible)' : ''}
-            </li>
-          ))}
-        </ul>
-      )}
+        {cars.length === 0 ? (
+          <p>No cars available.</p>
+        ) : (
+          cars.map(car => <Card key={car.id} car={car} />)
+        )}
+      </div>
     </div>
   );
 };

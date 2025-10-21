@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getCarById } from '/services/CarsAPI.jsx';
+import '../css/Card.css';
 
 const CarDetails = () => {
   const { id } = useParams(); 
@@ -27,18 +28,21 @@ const CarDetails = () => {
   if (!car) return <p>Car not found.</p>;
 
   return (
-    <div>
-      <h2>{car.name}</h2>
-      <p><strong>Price:</strong> ${car.price}</p>
-      <p><strong>Exterior:</strong> {car.exterior}</p>
-      <p><strong>Interior:</strong> {car.interior}</p>
-      <p><strong>Roof:</strong> {car.roof}</p>
-      <p><strong>Wheels:</strong> {car.wheels}</p>
-      <p><strong>Convertible:</strong> {car.convertible ? 'Yes' : 'No'}</p>
-      <button onClick={() => navigate(`/edit/${car.id}`)}>
-  Edit Car
-</button>
-
+    <div className="cards-container">
+      <div className="card card-details">
+        <h2>{car.name}</h2>
+        <p><strong>Price:</strong> ${car.price}</p>
+        <p>
+          <strong>Exterior:</strong> {car.exterior} 
+          <strong> | Interior:</strong> {car.interior} 
+          <strong> | Roof:</strong> {car.roof} 
+          <strong> | Wheels:</strong> {car.wheels} 
+          {car.convertible && ' (Convertible)'}
+        </p>
+        <div className="button-group">
+          <button onClick={() => navigate(`/edit/${car.id}`)}>Edit Car</button>
+        </div>
+      </div>
     </div>
   );
 };

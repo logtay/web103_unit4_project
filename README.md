@@ -40,7 +40,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='https://github.com/logtay/web103_unit4_project/blob/main/Unit4Proj.gif' title='Video Walkthrough' width='700' alt='Video Walkthrough' />
+<img src='https://github.com/logtay/web103_unit4_project/blob/main/Web103_Week5.gif?' title='Video Walkthrough' width='700' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [Kap](https://getkap.co/) for macOS
